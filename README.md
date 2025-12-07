@@ -65,7 +65,7 @@ STILL WIP
 🚀 For a quick and easy setup, use our installer. (WIP)
 
 1.  ⬇️ **Download the Installer**:
-    Download the latest version of `BPSR Module Optimizer Setup.exe` from the [releases page](https://github.com/mrsnakke/BPSR-AutoModules/releases).
+    Download the latest version of `BPSR Module Optimizer Setup.exe` from the [releases page]().
 
 2.  ▶️ **Run the Installer**:
     -   Double-click `BPSR Module Optimizer Setup.exe` to start the installation.
@@ -80,16 +80,11 @@ STILL WIP
 
 4.  ⚙️ **Initial Configuration in the Application**:
     -   Select the network interface you use (Ethernet or Wi-Fi).
-    -   Choose the module type (Attack / Guard / Support / All).
-    -   Define attributes manually or select a preset.
-    -   (Optional) Adjust the attribute distribution filter to view specific combinations (e.g., Lv.5/Lv.5).
 
 5.  ▶️ **Start Monitoring**:
     -   Click "Start Monitoring" to begin capturing.
     -   🎮 In the game, trigger data transmission (e.g., changing channels or returning to the character selection screen).
     -   📈 The application will detect the data and display the best results in the main panel.
 
-6.  🔄 **Adjust and Re-filter**:
-    -   Adjust filters and use "Refilter" to recalculate without re-capturing.
-    -   ⏹️ When finished, click "Stop Monitoring".
+
 
