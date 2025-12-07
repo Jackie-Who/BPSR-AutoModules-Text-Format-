@@ -17,6 +17,7 @@ from PIL import Image
 from network_interface_util import get_network_interfaces
 from star_resonance_monitor_core import StarResonanceMonitor
 from logging_config import setup_logging
+from module_exporter import export_modules_to_file, get_modules_as_text
 
 # --- Log Queue Handler (unchanged) ---
 class QueueHandler(logging.Handler):
@@ -500,6 +501,16 @@ class App(ctk.CTk):
         self.after(100, self.poll_queues)
         self.update_dist_filter_buttons() # Set initial button state
         self.change_language("English") # Set default language
+
+        # Export button
+        self.export_button = ctk.CTkButton(
+            button_frame,  # or whatever parent frame is used
+            text="📄 Export Modules",
+            command=self.export_modules,
+            state="disabled",  # Disabled until modules are captured
+            width=140
+        )
+        self.export_button.pack(side="left", padx=5)
 
     def change_language(self, language: str):
         self.current_language = "en" if language == "English" else "es"
@@ -1193,6 +1204,10 @@ class App(ctk.CTk):
             prioritized_attrs=prioritized_attrs,
             priority_order_mode=priority_order_mode,
             on_data_captured_callback=self.enable_rescreening,
+            
+            # Enable the export button
+            self.export_button.configure(state="normal")
+            
             progress_callback=self.progress_callback,
             on_results_callback=self.results_callback # Pass results callback
         )
@@ -1268,6 +1283,32 @@ class App(ctk.CTk):
     def on_closing(self):
         self.stop_monitoring()
         self.destroy()
+
+    def export_modules(self):
+        """Export captured modules to a text file"""
+        if not self.monitor or not self.monitor.has_captured_data():
+            self.log_message("No modules captured yet!")
+            return
+        
+        try:
+            # Get the captured modules
+            modules = self.monitor.captured_modules
+            
+            # Export to file
+            filepath = export_modules_to_file(modules)
+            
+            self.log_message(f"✅ Exported {len(modules)} modules to:")
+            self.log_message(f"   {filepath}")
+            
+            # Optional: Show a popup
+            from tkinter import messagebox
+            messagebox.showinfo(
+                "Export Complete",
+                f"Exported {len(modules)} modules to:\n{filepath}"
+            )
+        
+        except Exception as e:
+            self.log_message(f"❌ Export failed: {e}")
 
 if __name__ == "__main__":
     import multiprocessing
