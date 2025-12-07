@@ -52,7 +52,7 @@ Follow these steps to set up and run the project:
     Open a terminal (CMD, PowerShell, or Git Bash) and run the following command to clone the repository:
     ```bash
     git clone https://github.com/Jackie-Who/BPSR-AutoModules-Text-Format-.git
-    cd BPSR-AutoModules-Text-Format-
+    cd BPSR-AutoModules
     ```
 
 2.  🐍 **Create and activate a virtual environment (recommended)**:

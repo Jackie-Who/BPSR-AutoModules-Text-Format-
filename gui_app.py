@@ -504,10 +504,15 @@ class App(ctk.CTk):
 
         # Export button
         self.export_button = ctk.CTkButton(
-            button_frame,  # or whatever parent frame is used
+            self.control_buttons_frame,
             text="📄 Export Modules",
             command=self.export_modules,
-            state="disabled",  # Disabled until modules are captured
+            state="disabled",
+            corner_radius=8,
+            fg_color=self.THEME["color"]["background_secondary"],
+            text_color=self.THEME["color"]["text_primary"],
+            hover_color=self.THEME["color"]["border"],
+            border_width=0,
             width=140
         )
         self.export_button.pack(side="left", padx=5)
@@ -1205,8 +1210,7 @@ class App(ctk.CTk):
             priority_order_mode=priority_order_mode,
             on_data_captured_callback=self.enable_rescreening,
             
-            # Enable the export button
-            self.export_button.configure(state="normal")
+            
             
             progress_callback=self.progress_callback,
             on_results_callback=self.results_callback # Pass results callback
@@ -1279,6 +1283,9 @@ class App(ctk.CTk):
         """Callback function to enable the "Rescreen" button"""
         self.rescreen_button.configure(state="normal")
         self.status_label.configure(text="Status: Data captured, ready to rescreen.")
+
+        # Enable the export button
+        self.export_button.configure(state="normal")
         
     def on_closing(self):
         self.stop_monitoring()
@@ -1286,29 +1293,27 @@ class App(ctk.CTk):
 
     def export_modules(self):
         """Export captured modules to a text file"""
-        if not self.monitor or not self.monitor.has_captured_data():
-            self.log_message("No modules captured yet!")
+        if not self.monitor_instance or not self.monitor_instance.has_captured_data():
+            from tkinter import messagebox
+            messagebox.showwarning("No Data", "No modules captured yet!")
             return
         
         try:
-            # Get the captured modules
-            modules = self.monitor.captured_modules
-            
-            # Export to file
+            modules = self.monitor_instance.captured_modules
             filepath = export_modules_to_file(modules)
             
-            self.log_message(f"✅ Exported {len(modules)} modules to:")
-            self.log_message(f"   {filepath}")
+            print(f"✅ Exported {len(modules)} modules to: {filepath}")
             
-            # Optional: Show a popup
             from tkinter import messagebox
             messagebox.showinfo(
                 "Export Complete",
                 f"Exported {len(modules)} modules to:\n{filepath}"
             )
-        
+            
         except Exception as e:
-            self.log_message(f"❌ Export failed: {e}")
+            print(f"❌ Export failed: {e}")
+            from tkinter import messagebox
+            messagebox.showerror("Export Failed", f"Error: {e}")
 
 if __name__ == "__main__":
     import multiprocessing
