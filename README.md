@@ -1,6 +1,6 @@
 # Used Alongside the Following Website
 
-https://claude.ai/public/artifacts/b14f009e-0eba-4080-9352-8de574595280
+https://claude.ai/public/artifacts/043ed420-2398-484d-b45b-c8582d634826
 
 ## 💻 Installation and Usage (For Advanced Users - Direct Python Execution)
 
@@ -88,6 +88,7 @@ Follow these steps to set up and run the project:
 5.  ▶️ **Start Monitoring**:
     -   Click "Start Monitoring" to begin capturing.
     -   🎮 In the game, trigger data transmission (e.g., changing channels or returning to the character selection screen).
+
 
 
 
