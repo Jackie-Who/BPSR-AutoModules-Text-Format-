@@ -37,7 +37,7 @@ Follow these steps to set up and run the project:
 3.  📦 **Install dependencies**:
     With the virtual environment activated, install the necessary Python libraries:
     ```bash
-    pip install customtkinter Pillow scapy zstandard protobuf
+    pip install customtkinter Pillow scapy zstandard protobuf psutil
     ```
     ⚠️ *Note: `scapy` may require administrator permissions on some systems for installation or execution.*
 
@@ -92,3 +92,4 @@ STILL WIP
 6.  🔄 **Adjust and Re-filter**:
     -   Adjust filters and use "Refilter" to recalculate without re-capturing.
     -   ⏹️ When finished, click "Stop Monitoring".
+
