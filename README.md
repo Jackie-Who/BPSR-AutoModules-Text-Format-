@@ -58,11 +58,11 @@ Follow these steps to set up and run the project:
     -   📈 The application will detect the data and display the best results in the main panel.
 
 
---
+---
 
-STILL WIP
+# STILL WIP
 
-🚀 For a quick and easy setup, use our installer. (WIP)
+🚀 For a quick and easy setup, use our installer. 
 
 1.  ⬇️ **Download the Installer**:
     Download the latest version of `BPSR Module Optimizer Setup.exe` from the [releases page]().
@@ -85,6 +85,7 @@ STILL WIP
     -   Click "Start Monitoring" to begin capturing.
     -   🎮 In the game, trigger data transmission (e.g., changing channels or returning to the character selection screen).
     -   📈 The application will detect the data and display the best results in the main panel.
+
 
 
 
