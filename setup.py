@@ -14,6 +14,7 @@ build_exe_options = {
         "packet_capture",
         "star_railway_monitor",
         "BlueProtobuf_pb2",
+        "module_exporter",
     ],
     "include_files": [
         "icon.ico",
