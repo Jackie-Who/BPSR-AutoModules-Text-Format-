@@ -51,7 +51,7 @@ Follow these steps to set up and run the project:
 1.  ⬇️ **Clone the repository**:
     Open a terminal (CMD, PowerShell, or Git Bash) and run the following command to clone the repository:
     ```bash
-    git clone https://github.com/mrsnakke/BPSR-AutoModules.git
+    git clone https://github.com/Jackie-Who/BPSR-AutoModules-Text-Format-.git
     cd BPSR-AutoModules
     ```
 
@@ -95,6 +95,3 @@ Follow these steps to set up and run the project:
     -   Adjust filters and use "Refilter" to recalculate without re-capturing.
     -   ⏹️ When finished, click "Stop Monitoring".
 
----
-
-🚨 **Descargo de responsabilidad**: Esta herramienta tiene fines de aprendizaje y análisis de datos únicamente. No debe ser utilizada para actividades que violen los términos de servicio del juego. El usuario asume los riesgos asociados. El autor del proyecto no se responsabiliza del mal uso por parte de terceros. Asegúrate de cumplir con las reglas y políticas del juego y de la comunidad antes de usarla.
