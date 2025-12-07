@@ -17,7 +17,7 @@ build_exe_options = {
         "module_exporter",
     ],
     "include_files": [
-        "icon.ico",
+        "no-game-no-life-icon.ico",
         "LICENSE", # Incluir la licencia
         "README.md", # Incluir el README
     ],
@@ -37,4 +37,5 @@ setup(
     options={"build_exe": build_exe_options},
     executables=[Executable("simple_gui.py", base=base, icon="icon.ico")],
 )
+
 
