@@ -1,6 +1,8 @@
 # Used Alongside the Following Website
 
-https://claude.ai/public/artifacts/043ed420-2398-484d-b45b-c8582d634826
+https://claude.ai/public/artifacts/850e09a7-5ffd-4a04-b15d-33aad4abf5f5
+
+v78: Updated optimization algorithm and added pre-filtering to increase optimizer speeds when searching through combinations.
 
 ## 💻 Installation and Usage (For Advanced Users - Direct Python Execution)
 
@@ -88,6 +90,7 @@ Follow these steps to set up and run the project:
 5.  ▶️ **Start Monitoring**:
     -   Click "Start Monitoring" to begin capturing.
     -   🎮 In the game, trigger data transmission (e.g., changing channels or returning to the character selection screen).
+
 
 
 
